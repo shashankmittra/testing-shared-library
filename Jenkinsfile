@@ -6,8 +6,11 @@ pipeline{
 			steps{
 				echo "Hello"
 				scripts {
-          ["git", "clone", "https://github.com/shashankmittra/simple-text.git"].execute()
-        }
+					def call(){
+          					["git", "clone", "https://github.com/shashankmittra/simple-text.git"].execute()
+					}
+					call()
+        				}		
 				echo 'Branch - ' + env.GIT_BRANCH
 				echo "done"
 				echo "Workspace location: ${env.WORKSPACE}"
