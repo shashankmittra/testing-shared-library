@@ -5,11 +5,8 @@ pipeline{
 		stage("clone"){
 			steps{
 				echo "Hello"
-				scripts {
-					def call(){
+				script {
           					["git", "clone", "https://github.com/shashankmittra/simple-text.git"].execute()
-					}
-					call()
         				}		
 				echo 'Branch - ' + env.GIT_BRANCH
 				echo "done"
