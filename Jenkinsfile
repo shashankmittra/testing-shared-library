@@ -5,7 +5,7 @@ pipeline{
 		stage("clone"){
 			steps{
 				echo "Hello"
-				checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/shashankmittra/simple-text.git']]])
+				checkout([$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shashankmittra/simple-text.git']]])
 		
 				echo 'Branch - ' + env.GIT_BRANCH
 				echo "done"
